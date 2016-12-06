@@ -21,3 +21,14 @@ bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
 	```bash
 phpunit
 	```
+
+##Trouble Shooting##
+
+If you run into problems with the `phpunit` command reporting that it's unable to connect to your database, it could be the case that php is tying to use a socket that isn't available. This can happen when you installed mysql with homebrew, while using the default php installation on OSX. To debug this a issue, run the following commands to figure out which socket php is trying to use, and which socket your mysql server is using.
+
+    php -i | fgrep 'mysql.default_socket'
+    mysql -e 'show variables where variable_name = "socket"'
+    
+One potential fix for this specific scenario is to symlink the php default socket to the one used by the homebrew's mysql server.
+     
+     sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
