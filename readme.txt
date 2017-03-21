@@ -2,7 +2,7 @@
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: comments, spam
-Requires at least: 3.7
+Requires at least: 4.4
 Tested up to: 4.8-alpha-39357-src
 Stable tag: 0.1.0
 License: GPLv2 or later
