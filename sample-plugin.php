@@ -11,3 +11,10 @@
  *
  * @package Sample_Plugin
  */
+
+/**
+ * This is just a sample plugin.
+ */
+function sample_plugin() {
+	echo 'Do nothing';
+}
