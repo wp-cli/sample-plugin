@@ -1,0 +1,15 @@
+{
+    "name": "wp-cli/sample-plugin",
+    "description": "Example plugin, generated using `wp scaffold plugin sample-plugin`",
+    "type": "wordpress-plugin",
+    "scripts": {
+        "lint:php:config": "phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+        "lint:php": "phpcs --standard=phpcs.ruleset.xml $(find src tests -name '*.php')",
+        "lint:php:fix": "phpcs --standard=phpcs.ruleset.xml $(find src tests -name '*.php')"
+    },
+    "require": {
+        "php": ">=5.3",
+        "composer/installers": "^1.3",
+        "wp-coding-standards/wpcs": "*"
+    }
+}
