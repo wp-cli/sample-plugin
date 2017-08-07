@@ -11,6 +11,7 @@ DB_PASS=$3
 DB_HOST=${4-localhost}
 WP_VERSION=${5-latest}
 SKIP_DB_CREATE=${6-false}
+DB_PORT=${7-3306}
 
 WP_TESTS_DIR=${WP_TESTS_DIR-/tmp/wordpress-tests-lib}
 WP_CORE_DIR=${WP_CORE_DIR-/tmp/wordpress/}
@@ -119,7 +120,7 @@ install_db() {
 	fi
 
 	# create database
-	mysqladmin create $DB_NAME --user="$DB_USER" --password="$DB_PASS"$EXTRA
+	mysqladmin create $DB_NAME --user="$DB_USER" --password="$DB_PASS"$EXTRA --port="$DB_PORT"
 }
 
 install_wp
