@@ -12,12 +12,12 @@ dependencies:
 
 test:
   pre:
+    - composer global require "phpunit/phpunit=5.7.*"
     - |
       composer global require wp-coding-standards/wpcs
       phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
-      composer global require "phpunit/phpunit=5.7.*"
   override:
-    - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')
+    - phpcs
     - |
       rm -rf $WP_TESTS_DIR $WP_CORE_DIR
       bash bin/install-wp-tests.sh wordpress_test ubuntu '' 127.0.0.1 4.4
